@@ -2,7 +2,7 @@ module.exports = function getZerosCount(number, base) {
   // факторизация base
   var p = []; // массив множителей
   var q = []; // степень каждого множителя
-  count = 0;
+  let count = 0;
   for (let i = 2; i <= base; i++) {
     if (base % i === 0) {
       while (base % i === 0) {
@@ -15,9 +15,10 @@ module.exports = function getZerosCount(number, base) {
     }
   }
      
-  var o = [];
-  var c = [];
+  var o = []; // временный массив для подсчёта множителей
+  var c = []; // суммы множителей
  
+  // сколько степеней множителя рассматриваем
   for(let j = 0; j < p.length; j++) {    
     var f = 0;
     while(Math.pow(p[j], f + 1) < number) {
